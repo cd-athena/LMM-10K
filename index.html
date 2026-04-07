@@ -12,6 +12,7 @@ body {
   background: white;
 }
 
+/* NAVBAR */
 nav {
   display: flex;
   justify-content: flex-end;
@@ -29,9 +30,11 @@ nav a {
   color: black;
 }
 
+/* HERO */
 .banner {
   position: relative;
   height: 70vh;
+  overflow: hidden;
 }
 
 .banner video {
@@ -40,6 +43,16 @@ nav a {
   object-fit: cover;
 }
 
+/* DARK OVERLAY */
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* TEXT OVER VIDEO */
 .overlay {
   position: absolute;
   top: 50%;
@@ -49,10 +62,20 @@ nav a {
   font-size: 50px;
   font-weight: bold;
   text-align: center;
+  z-index: 2;
+
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+
+  text-shadow:
+    2px 2px 6px rgba(0,0,0,0.95),
+    0 0 12px rgba(0,0,0,0.9),
+    0 0 24px rgba(0,0,0,0.8);
 }
 
+/* SECTIONS */
 .section {
-  padding: 80px 20px;
+  padding: 30px 20px;
   text-align: center;
 }
 
@@ -65,20 +88,37 @@ nav a {
   border-radius: 10px;
 }
 
+/* 🔥 IMPROVED DOWNLOAD BUTTON */
 .btn {
   display: inline-block;
-  margin: 10px;
-  padding: 14px 28px;
-  background: #007acc;
+  margin: 25px auto;
+  padding: 18px 40px;
+  font-size: 20px;
+  font-weight: bold;
+
+  background: linear-gradient(135deg, #007acc, #00a2ff);
   color: white;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 20px rgba(0, 122, 204, 0.5);
+  transition: all 0.3s ease;
 }
 
+/* Hover */
 .btn:hover {
-  background: #005999;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0, 122, 204, 0.7);
+  background: linear-gradient(135deg, #005999, #0088cc);
 }
 
+/* Click */
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(0, 122, 204, 0.4);
+}
+
+/* CODE BLOCK */
 pre {
   background: #f4f4f4;
   padding: 15px;
@@ -90,6 +130,7 @@ pre {
 
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="#">LMM-10K</a>
   <a href="#download">Download</a>
@@ -99,73 +140,97 @@ pre {
 
 <!-- HERO -->
 <div class="banner">
-  <video autoplay muted loop>
+  <video autoplay muted loop playsinline>
     <source src="assets/preview.mp4" type="video/mp4">
   </video>
+
   <div class="overlay">
     LMM-10K<br>
     Large-Scale 4K Multimodal Dataset
   </div>
 </div>
 
-<!-- OVERVIEW -->
+<!-- OVERVIEW + APPLICATIONS -->
 <section class="section">
   <div class="box">
-    <h2>Overview</h2>
-    <p>
+
+    <h2 style="font-size:32px; margin-bottom:20px;">Overview</h2>
+
+    <p style="font-size:20px; line-height:1.8; color:#333;">
       LMM-10K is a large-scale multimodal video dataset consisting of 
       <strong>10,000 high-quality 4K videos at 60 fps</strong> enriched with 
       semantic, perceptual, and content-aware annotations.
     </p>
 
-    <ul>
-      <li>📹 10,000 curated 4K video sequences</li>
-      <li>🧠 Multimodal annotations (semantic + perceptual)</li>
-      <li>📊 Video complexity & quality metrics</li>
-      <li>🌍 Diverse real-world scenes from Pexels</li>
-      <li>⚙️ Designed for AI, compression, and multimodal research</li>
-    </ul>
-  </div>
-</section>
+<ul style="font-size:18px; line-height:1.8;">
 
-<!-- APPLICATIONS -->
-<section class="section">
-  <div class="box">
-    <h2>Applications</h2>
-    <ul>
+  <li style="margin-bottom:10px;">
+    📹 10,000 sampled 4K video sequences from 
+    <a href="https://www.pexels.com/" target="_blank" style="color:#007acc; text-decoration:none;">
+      Pexels
+    </a>
+  </li>
+
+  <li style="margin-bottom:10px;">
+    🧠 Rich multimodal annotations combining semantic and perceptual information
+  </li>
+
+  <li style="margin-bottom:10px;">
+    🤖 LLM-generated semantic descriptors using the Qwen3 model
+  </li>
+
+  <li style="margin-bottom:10px;">
+    🎯 No-reference quality assessment using PIQE, BRISQUE, NIMA, and LIQE
+  </li>
+
+  <li style="margin-bottom:10px;">
+    📊 Video complexity analysis including SI/TI, 
+    <a href="https://cd-athena.github.io/VCA/" target="_blank" style="color:#007acc; text-decoration:none;">
+      VCA
+    </a>, and 
+    <a href="https://github.com/cd-athena/EVCA" target="_blank" style="color:#007acc; text-decoration:none;">
+      EVCA
+    </a>
+  </li>
+
+  <li style="margin-bottom:10px;">
+    🌍 Broad diversity of real-world scenes covering natural, urban, and dynamic content
+  </li>
+
+  <li style="margin-top:20px;">
+    ⚙️ Designed to support a wide range of applications:
+    <ul style="margin-top:10px; padding-left:25px; line-height:1.7;">
       <li>Video enhancement and restoration</li>
       <li>Content-aware video compression</li>
       <li>Neural video coding</li>
       <li>Multimodal learning (vision-language)</li>
       <li>Generative video modeling</li>
-      <li>Perceptual quality modeling</li>
+      <li>Perceptual quality assessment</li>
     </ul>
+  </li>
+
+</ul>
+
   </div>
 </section>
 
 <!-- DOWNLOAD -->
 <section id="download" class="section">
   <h2>Dataset</h2>
-  <a class="btn" href="YOUR_DATASET_LINK" target="_blank">
-    Download Dataset
+  <a class="btn" href="https://ftp.itec.aau.at/datasets/LLM-10K/" target="_blank">
+    ⬇ Download Dataset (LMM-10K)
   </a>
 </section>
 
 <!-- PAPER -->
 <section id="paper" class="section">
-  <h2>Paper (For Reviewers)</h2>
-
-  <a class="btn" href="paper.pdf" target="_blank">
-    📄 Download Paper (PDF)
-  </a>
-
-  <div class="box" style="margin-top:30px;">
+  <div class="box">
     <h3>Citation</h3>
 <pre>
 @inproceedings{ghasempour2026lmm10k,
-  title={LMM-10K: Large-Scale 4K Multimodal Dataset},
+  title={{LMM-10K}: {Large}-{Scale} {4K} {Multimodal} {Dataset} for {Perceptual}, {Semantic}, and {Content}-{Aware} {Video} {Processing}},
   author={Ghasempour, Mohammad and Wei, Yiying and Amirpour, Hadi and Timmerer, Christian},
-  booktitle={ACM MM 2026},
+  booktitle={Submitted to ACM Multimedia 2026},
   year={2026}
 }
 </pre>
