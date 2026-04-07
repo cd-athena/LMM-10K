@@ -1,95 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>LMM-10K Dataset</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: auto;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        h1, h2 {
-            text-align: center;
-        }
-        .section {
-            margin-top: 40px;
-        }
-        .box {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        img {
-            width: 100%;
-            border-radius: 8px;
-        }
-        code {
-            background: #eee;
-            padding: 5px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LMM-10K: Large-Scale 4K Multimodal Dataset</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: white;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 30px;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.banner {
+  position: relative;
+  height: 70vh;
+}
+
+.banner video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.box {
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+  background: #f9f9ff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 28px;
+  background: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  background: #005999;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+</style>
 </head>
 
 <body>
 
-<h1>LMM-10K Dataset</h1>
-<p style="text-align:center;">
-A Large-Scale Multimodal Video Dataset for Visual, Perceptual, and Semantic Understanding
-</p>
+<nav>
+  <a href="#">LMM-10K</a>
+  <a href="#download">Download</a>
+  <a href="#paper">Paper</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-<div class="section">
+<!-- HERO -->
+<div class="banner">
+  <video autoplay muted loop>
+    <source src="assets/preview.mp4" type="video/mp4">
+  </video>
+  <div class="overlay">
+    LMM-10K<br>
+    Large-Scale 4K Multimodal Dataset
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="section">
+  <div class="box">
     <h2>Overview</h2>
     <p>
-        LMM-10K is a large-scale dataset consisting of 10,000 high-quality 4K videos at 60fps,
-        enriched with multimodal annotations including LLM-generated captions, quality metrics,
-        and spatio-temporal complexity features.
+      LMM-10K is a large-scale multimodal video dataset consisting of 
+      <strong>10,000 high-quality 4K videos at 60 fps</strong> enriched with 
+      semantic, perceptual, and content-aware annotations.
     </p>
-</div>
 
-<div class="section">
-    <h2>Teaser</h2>
-    <img src="teaser.png" alt="dataset teaser">
-</div>
-
-<div class="section">
-    <h2>Key Features</h2>
     <ul>
-        <li>10,000 high-fidelity 4K videos (60fps)</li>
-        <li>LLM-generated semantic captions</li>
-        <li>No-reference quality metrics</li>
-        <li>Spatial-temporal complexity annotations</li>
-        <li>Diverse real-world content</li>
+      <li>📹 10,000 curated 4K video sequences</li>
+      <li>🧠 Multimodal annotations (semantic + perceptual)</li>
+      <li>📊 Video complexity & quality metrics</li>
+      <li>🌍 Diverse real-world scenes from Pexels</li>
+      <li>⚙️ Designed for AI, compression, and multimodal research</li>
     </ul>
-</div>
+  </div>
+</section>
 
-<div class="section">
-    <h2>Dataset Samples</h2>
-</div>
+<!-- APPLICATIONS -->
+<section class="section">
+  <div class="box">
+    <h2>Applications</h2>
+    <ul>
+      <li>Video enhancement and restoration</li>
+      <li>Content-aware video compression</li>
+      <li>Neural video coding</li>
+      <li>Multimodal learning (vision-language)</li>
+      <li>Generative video modeling</li>
+      <li>Perceptual quality modeling</li>
+    </ul>
+  </div>
+</section>
 
-<div class="section">
-    <h2>Download</h2>
-    <div class="box">
-        <p>📦 Dataset: <a href="#">Download Link</a></p>
-        <p>📄 Paper: <a href="#">ArXiv Link</a></p>
-        <p>💻 Code: <a href="#">GitHub Repo</a></p>
-    </div>
-</div>
+<!-- DOWNLOAD -->
+<section id="download" class="section">
+  <h2>Dataset</h2>
+  <a class="btn" href="YOUR_DATASET_LINK" target="_blank">
+    Download Dataset
+  </a>
+</section>
 
-<div class="section">
-    <h2>Citation</h2>
-    <div class="box">
+<!-- PAPER -->
+<section id="paper" class="section">
+  <h2>Paper (For Reviewers)</h2>
+
+  <a class="btn" href="paper.pdf" target="_blank">
+    📄 Download Paper (PDF)
+  </a>
+
+  <div class="box" style="margin-top:30px;">
+    <h3>Citation</h3>
 <pre>
-@dataset{lmm10k,
-  title={LMM-10K: A Large-Scale Multimodal Video Dataset},
-  author={Your Name},
+@inproceedings{ghasempour2026lmm10k,
+  title={LMM-10K: Large-Scale 4K Multimodal Dataset},
+  author={Ghasempour, Mohammad and Wei, Yiying and Amirpour, Hadi and Timmerer, Christian},
+  booktitle={ACM MM 2026},
   year={2026}
 }
 </pre>
-    </div>
-</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <p>
+    Mohammad Ghasempour<br>
+    📧 mohammad.ghasempour@aau.at
+  </p>
+</section>
 
 </body>
 </html>
